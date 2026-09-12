@@ -1,10 +1,10 @@
 #include <input/processors.dtsi>
 #include <behaviors/runtime-sensor-rotate.dtsi>
+#include <behaviors/runtime-sensor-rotate.dtsi>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
-#include <behaviors/runtime-sensor-rotate.dtsi>
 
 #define MOUSE 6
 
@@ -14,10 +14,13 @@
 };
 
 // AML クリックしたときにタイムアウトを延長
+
 &mkp_input_listener { input-processors = <&zip_temp_layer 6 10000>; };
 
 / {
-    combos { compatible = "zmk,combos"; 
+    combos {
+        compatible = "zmk,combos";
+
         kakko_left {
             bindings = <&kp LEFT_PARENTHESIS>;
             key-positions = <2 3>;
@@ -105,7 +108,7 @@
             require-prior-idle-ms = <120>;
             layers = <5 6>;
         };
-};
+    };
 
     macros {
         to_layer_0: to_layer_0 {
@@ -127,6 +130,7 @@
 
             label = "SCREENSHOT";
         };
+
         EN_to_L0: EN_to_L0 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -206,20 +210,25 @@
             #binding-cells = <2>;
             tapping-term-ms = <300>;
         };
+
         // Kyemap Editor用
+
         scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             tap-ms = <20>;
             bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
         };
+
         vol_up_down: vol_up_down {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             tap-ms = <5>;
             bindings = <&kp C_VOL_DN>, <&kp C_VOL_UP>;
         };
+
         // DYA Studio用
+
         rsr_vol: rsr_vol {
             compatible = "zmk,behavior-runtime-sensor-rotate";
             #sensor-binding-cells = <0>;
@@ -227,7 +236,9 @@
             cw-binding = <&kp C_VOL_DN>;
             ccw-binding = <&kp C_VOL_UP>;
         };
+
         // 引き継ぎ
+
         re_kp: sensor_rotate_kp {
             compatible = "zmk,behavior-sensor-rotate-var";
             #sensor-binding-cells = <2>;
@@ -306,16 +317,16 @@
 
         default_layer {
             bindings = <
-&kp Q                 &kp W         &kp E         &kp R             &kp T                         &kp Y        &kp U          &kp I      &kp O         &kp P
-&kp A                 &kp S         &kp D         &kp F             &kp G                         &kp H        &kp J          &kp K      &kp L         &lt 5 MINUS
-&mt LEFT_SHIFT Z      &kp X         &kp C         &kp V             &kp B                         &kp N        &kp M          &kp COMMA  &kp PERIOD    &lt 7 SLASH
-&mt LEFT_CONTROL TAB  &kp LEFT_WIN  &kp LEFT_ALT  &lt 7 LANG_HANJA  &lt 2 SPACE  &lt 3 LANG1      &lt 1 ENTER  &kp BACKSPACE  &trans     &lt 4 F10     &mt RIGHT_SHIFT INTERNATIONAL_1
+&kp Q                 &kp W         &kp E         &kp R             &kp T                         &kp Y        &kp U          &kp I      &kp O       &kp P
+&kp A                 &kp S         &kp D         &kp F             &kp G                         &kp H        &kp J          &kp K      &kp L       &lt 5 MINUS
+&mt LEFT_SHIFT Z      &kp X         &kp C         &kp V             &kp B                         &kp N        &kp M          &kp COMMA  &kp PERIOD  &lt 7 SLASH
+&mt LEFT_CONTROL TAB  &kp LEFT_WIN  &kp LEFT_ALT  &lt 7 LANG_HANJA  &lt 2 SPACE  &lt 3 LANG1      &lt 1 ENTER  &kp BACKSPACE  &trans     &lt 4 F10   &mt RIGHT_SHIFT INTERNATIONAL_1
             >;
 
             sensor-bindings = <&rsr_vol &rsr_trans>;
         };
 
-        layer_1 {
+        OHNISHI {
             bindings = <
 &trans  &trans  &trans  &trans  &trans              &kp F1  &kp F2   &kp F3  &kp F4   &kp F5
 &trans  &trans  &trans  &trans  &trans              &kp F6  &kp F7   &kp F8  &kp F9   &kp F10
@@ -326,7 +337,7 @@
             sensor-bindings = <&rsr_vol &rsr_trans>;
         };
 
-        layer_2 {
+        default_not_ohnishi {
             bindings = <
 &kp SLASH                   &kp N7     &kp N8  &kp N9  &kp LS(SQT)                    &kp LS(NUMBER_3)  &kp LS(NUMBER_4)  &kp LS(NUMBER_5)      &kp LS(NUMBER_6)   &kp LEFT_BRACKET
 &kp MINUS                   &kp N4     &kp N5  &kp N6  &kp LS(SEMICOLON)              &kp LS(N2)        &kp LS(N7)        &kp LS(LEFT_BRACKET)  &kp LS(NUMBER_8)   &kp LS(NUMBER_9)
@@ -337,18 +348,18 @@
             sensor-bindings = <&rsr_vol &rsr_trans>;
         };
 
-        layer_3 {
+        mouse {
             bindings = <
-&kp ESCAPE      &trans          &kp UP_ARROW    &trans           &trans              &trans  &trans  &trans  &trans  &trans
-&kp HOME        &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END             &trans  &trans  &trans  &trans  &trans
-&kp LEFT_SHIFT  &trans          &trans          &trans           &trans              &trans  &trans  &trans  &trans  &trans
-&trans          &trans          &trans          &trans           &trans  &trans      &trans  &trans  &trans  &trans  &trans
+&kp ESCAPE      &trans          &kp UP_ARROW    &trans           &trans               &trans  &trans  &trans  &trans  &trans
+&kp HOME        &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END              &trans  &trans  &trans  &trans  &trans
+&kp LEFT_SHIFT  &trans          &trans          &trans           &trans               &trans  &trans  &trans  &trans  &trans
+&trans          &trans          &trans          &trans           &trans   &trans      &trans  &trans  &trans  &trans  &trans
             >;
 
             sensor-bindings = <&rsr_vol &rsr_trans>;
         };
 
-        layer_4 {
+        slow {
             bindings = <
 &trans  &trans  &trans  &trans  &trans              &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
 &trans  &trans  &trans  &trans  &trans              &trans          &trans        &trans        &trans        &trans
@@ -359,7 +370,7 @@
             sensor-bindings = <&rsr_vol &rsr_trans>;
         };
 
-        layer_5 {
+        num_func {
             bindings = <
 &trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans
@@ -370,7 +381,7 @@
             sensor-bindings = <&rsr_vol &rsr_trans>;
         };
 
-        MOUSE {
+        num_not_ohnishi {
             bindings = <
 &trans  &trans  &trans  &trans  &trans              &trans  &mkp MB1  &mkp MB2  &mkp MB3  &trans
 &trans  &trans  &trans  &trans  &trans              &trans  &trans    &trans    &trans    &trans
@@ -381,7 +392,7 @@
             sensor-bindings = <&rsr_vol &rsr_trans>;
         };
 
-        layer_7 {
+        symbol_scroll {
             bindings = <
 &kp LC(Z)  &kp LC(Y)    &trans       &trans       &trans              &trans  &trans  &trans  &trans  &trans
 &trans     &trans       &trans       &trans       &trans              &trans  &trans  &trans  &trans  &trans
@@ -390,6 +401,33 @@
             >;
 
             sensor-bindings = <&rsr_vol &rsr_trans>;
+        };
+
+        ctrl_office {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        browse {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        wireless {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans
+            >;
         };
     };
 };
