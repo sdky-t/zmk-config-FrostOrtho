@@ -5,6 +5,8 @@
 #include <input/processors/runtime-input-processor.dtsi>
 #include <behaviors/battery_history_request.dtsi>
 
+#define MOUSE 3   // AMLレイヤー
+
 &default_transform {
     col-offset = <6>;
 };
@@ -61,7 +63,7 @@
         // input-processors = <&mouse_runtime_input_processor>;
         input-processors = <
             &mouse_runtime_input_processor
-            &zip_temp_layer 3 100000 // AMLレイヤー、タイムアウト時間
+            &zip_temp_layer MOUSE 100000 // AMLレイヤー、タイムアウト時間
             &zip_xy_scaler 2 3 // カーソル移動量2/3倍
             &zip_xy_transform INPUT_TRANSFORM_X_INVERT // カーソルの移動方向調整
             &zip_xy_transform INPUT_TRANSFORM_Y_INVERT // カーソルの移動方向調整
