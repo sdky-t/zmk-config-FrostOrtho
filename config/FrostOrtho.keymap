@@ -392,7 +392,7 @@
             sensor-bindings = <&rsr_vol &rsr_trans>;
         };
 
-        symbol_scroll {
+        symbol_scroll_vrt {
             bindings = <
 &kp LC(Z)  &kp LC(Y)    &trans       &trans       &trans              &trans  &trans  &trans  &trans  &trans
 &trans     &trans       &trans       &trans       &trans              &trans  &trans  &trans  &trans  &trans
@@ -403,7 +403,7 @@
             sensor-bindings = <&rsr_vol &rsr_trans>;
         };
 
-        ctrl_office {
+        ctrl_office_scroll_hrz {
             bindings = <
 &trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans
