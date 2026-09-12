@@ -24,7 +24,7 @@
         kakko_left {
             bindings = <&kp LEFT_PARENTHESIS>;
             key-positions = <2 3>;
-            layers = <0 1 2>;
+            layers = <0 1>;
             timeout-ms = <40>;
             require-prior-idle-ms = <120>;
         };
@@ -32,7 +32,7 @@
         kakko_right {
             bindings = <&kp RIGHT_PARENTHESIS>;
             key-positions = <6 7>;
-            layers = <0 1 2>;
+            layers = <0 1>;
             timeout-ms = <40>;
             require-prior-idle-ms = <120>;
         };
@@ -40,7 +40,7 @@
         daikakko_left {
             bindings = <&kp LEFT_BRACKET>;
             key-positions = <12 13>;
-            layers = <0 1 2>;
+            layers = <0 1>;
             timeout-ms = <40>;
             require-prior-idle-ms = <120>;
         };
@@ -48,7 +48,7 @@
         daikakko_right {
             bindings = <&kp RIGHT_BRACKET>;
             key-positions = <16 17>;
-            layers = <1 0 2>;
+            layers = <1 0>;
             timeout-ms = <40>;
             require-prior-idle-ms = <120>;
         };
@@ -56,7 +56,7 @@
         chukakko_left {
             bindings = <&kp LEFT_BRACE>;
             key-positions = <22 23>;
-            layers = <0 1 2>;
+            layers = <0 1>;
             timeout-ms = <40>;
             require-prior-idle-ms = <120>;
         };
@@ -64,7 +64,7 @@
         chukakko_right {
             bindings = <&kp RIGHT_BRACE>;
             key-positions = <26 27>;
-            layers = <0 1 2>;
+            layers = <0 1>;
             timeout-ms = <40>;
             require-prior-idle-ms = <120>;
         };
@@ -74,7 +74,7 @@
             key-positions = <13 14>;
             timeout-ms = <40>;
             require-prior-idle-ms = <120>;
-            layers = <0 1 2>;
+            layers = <0 1>;
         };
 
         semicolon {
@@ -82,7 +82,7 @@
             key-positions = <15 16>;
             timeout-ms = <40>;
             require-prior-idle-ms = <120>;
-            layers = <0 1 2>;
+            layers = <0 1>;
         };
 
         doublequote {
@@ -90,7 +90,7 @@
             key-positions = <3 4>;
             timeout-ms = <40>;
             require-prior-idle-ms = <120>;
-            layers = <0 1 2>;
+            layers = <0 1>;
         };
 
         quote {
@@ -98,7 +98,7 @@
             key-positions = <6 5>;
             timeout-ms = <40>;
             require-prior-idle-ms = <120>;
-            layers = <0 1 2>;
+            layers = <0 1>;
         };
 
         at {
@@ -106,7 +106,7 @@
             key-positions = <12 13>;
             timeout-ms = <40>;
             require-prior-idle-ms = <120>;
-            layers = <5 6>;
+            layers = <5>;
         };
     };
 
@@ -198,6 +198,34 @@
                 <&macro_wait_time 20>;
 
             label = "DDD";
+        };
+
+        lng2_under_l0: lng2_under_l0 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LANGUAGE_2 &kp RS(MINUS) &to 0>;
+            label = "LNG2_UNDER_L0";
+        };
+
+        lng2_at_l0: lng2_at_l0 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LANGUAGE_2 &kp RS(NUMBER_2) &to 0>;
+            label = "LNG2_AT_L0";
+        };
+
+        lng2_under: lng2_under {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LANGUAGE_2 &kp RS(MINUS) &to 0>;
+            label = "LNG2_UNDER";
+        };
+
+        lng2_at: lng2_at {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LANGUAGE_2 &kp RS(NUMBER_2) &to 0>;
+            label = "LNG2_AT";
         };
     };
 
@@ -317,116 +345,120 @@
 
         default_layer {
             bindings = <
-&kp Q                 &kp W         &kp E         &kp R             &kp T                         &kp Y        &kp U          &kp I      &kp O       &kp P
-&kp A                 &kp S         &kp D         &kp F             &kp G                         &kp H        &kp J          &kp K      &kp L       &lt 5 MINUS
-&mt LEFT_SHIFT Z      &kp X         &kp C         &kp V             &kp B                         &kp N        &kp M          &kp COMMA  &kp PERIOD  &lt 7 SLASH
-&mt LEFT_CONTROL TAB  &kp LEFT_WIN  &kp LEFT_ALT  &lt 7 LANG_HANJA  &lt 2 SPACE  &lt 3 LANG1      &lt 1 ENTER  &kp BACKSPACE  &trans     &lt 4 F10   &mt RIGHT_SHIFT INTERNATIONAL_1
+&kp Q                  &kp W                &lt 7 E                  &lt 5 R                &kp T                                                   &kp Y            &kp U        &kp I      &kp O          &mt RIGHT_ALT P
+&kp A                  &kp S                &kp D                    &lt 8 F                &kp G                                                   &kp H            &lt 8 J      &kp K      &kp L          &lt 9 MINUS
+&mt RC(Z) Z            &mt RC(C) X          &mt RC(X) C              &mt RC(V) V            &mt RC(Y) B                                             &kp N            &kp M        &kp COMMA  &kp PERIOD     &lt 8 SLASH
+&mt RIGHT_CONTROL ESC  &mt RIGHT_SHIFT TAB  &mt RIGHT_ALT RIGHT_GUI  &mt RIGHT_SHIFT SPACE  &mt_L1JP RIGHT_CONTROL 0  &mt_L1JP RIGHT_CONTROL 0      &lt 7 BACKSPACE  &lt 5 ENTER  &mo 10     &kp RIGHT_GUI  &mt RIGHT_ALT BACKSLASH
             >;
 
-            sensor-bindings = <&rsr_vol &rsr_trans>;
+            sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>, <&rsr_trans>;
         };
 
         OHNISHI {
             bindings = <
-&trans  &trans  &trans  &trans  &trans              &kp F1  &kp F2   &kp F3  &kp F4   &kp F5
-&trans  &trans  &trans  &trans  &trans              &kp F6  &kp F7   &kp F8  &kp F9   &kp F10
-&trans  &trans  &trans  &trans  &trans              &trans  &trans   &trans  &kp F11  &kp F12
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &kp DEL  &trans  &trans   &kp ESCAPE
+&kp Q        &kp L        &lt 7 U      &lt 5 COMMA  &kp PERIOD                   &kp F   &kp W        &kp R   &kp Y   &mt RIGHT_ALT P
+&kp E        &kp I        &kp A        &lt 8 O      &kp MINUS                    &kp K   &lt 8 T      &kp N   &kp S   &lt 9 H
+&mt RC(Z) Z  &mt RC(C) X  &mt RC(X) C  &mt RC(V) V  &mt RC(Y) SLASH              &kp G   &kp D        &kp M   &kp J   &lt 8 B
+&trans       &trans       &trans       &trans       &trans           &trans      &trans  &lt 5 ENTER  &trans  &trans  &trans
             >;
 
-            sensor-bindings = <&rsr_vol &rsr_trans>;
+            sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>, <&rsr_trans>;
         };
 
         default_not_ohnishi {
             bindings = <
-&kp SLASH                   &kp N7     &kp N8  &kp N9  &kp LS(SQT)                    &kp LS(NUMBER_3)  &kp LS(NUMBER_4)  &kp LS(NUMBER_5)      &kp LS(NUMBER_6)   &kp LEFT_BRACKET
-&kp MINUS                   &kp N4     &kp N5  &kp N6  &kp LS(SEMICOLON)              &kp LS(N2)        &kp LS(N7)        &kp LS(LEFT_BRACKET)  &kp LS(NUMBER_8)   &kp LS(NUMBER_9)
-&mt LEFT_SHIFT N0           &kp N1     &kp N2  &kp N3  &kp PERIOD                     &kp SEMICOLON     &kp SQT           &kp LS(INT_YEN)       &kp RIGHT_BRACKET  &kp BACKSLASH
-&mt LEFT_CONTROL LS(MINUS)  &kp ENTER  &trans  &trans  &trans             &trans      &trans            &trans            &trans                &kp LS(NUMBER_1)   &kp EQUAL
+&kp Q                  &kp W                &lt 7 E                  &lt 0 R                &kp T                                                      &kp Y            &kp U        &kp I      &kp O          &mt RIGHT_ALT P
+&kp A                  &kp S                &kp D                    &lt 8 F                &kp G                                                      &kp H            &lt 8 J      &kp K      &kp L          &lt 9 MINUS
+&mt RC(Z) Z            &mt RC(C) X          &mt RC(X) C              &mt RC(V) V            &mt RC(Y) B                                                &kp N            &kp M        &kp COMMA  &kp PERIOD     &lt 8 SLASH
+&mt RIGHT_CONTROL ESC  &mt RIGHT_SHIFT TAB  &mt RIGHT_ALT RIGHT_GUI  &mt RIGHT_SHIFT SPACE  &mt RIGHT_CONTROL LANGUAGE_1  &mt RIGHT_CONTROL LANG1      &lt 7 BACKSPACE  &lt 0 ENTER  &mo 10     &kp RIGHT_GUI  &mt RIGHT_ALT BACKSLASH
             >;
 
-            sensor-bindings = <&rsr_vol &rsr_trans>;
+            sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>, <&rsr_trans>;
         };
 
         mouse {
             bindings = <
-&kp ESCAPE      &trans          &kp UP_ARROW    &trans           &trans               &trans  &trans  &trans  &trans  &trans
-&kp HOME        &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp END              &trans  &trans  &trans  &trans  &trans
-&kp LEFT_SHIFT  &trans          &trans          &trans           &trans               &trans  &trans  &trans  &trans  &trans
-&trans          &trans          &trans          &trans           &trans   &trans      &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans           &trans                                    &trans  &trans    &trans           &mo 8              &trans
+&trans  &trans  &trans  &trans           &trans                                    &trans  &mkp MB1  &mkp MB2         &mo 7              &trans
+&trans  &trans  &trans  &trans           &trans                                    &trans  &trans    &kp RIGHT_SHIFT  &kp RIGHT_CONTROL  &trans
+&trans  &trans  &trans  &kp RIGHT_SHIFT  &kp RIGHT_CONTROL  &kp RIGHT_CONTROL      &trans  &trans    &trans           &trans             &trans
             >;
 
-            sensor-bindings = <&rsr_vol &rsr_trans>;
+            sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>, <&rsr_trans>;
         };
 
         slow {
             bindings = <
-&trans  &trans  &trans  &trans  &trans              &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&trans  &trans  &trans  &trans  &trans              &trans          &trans        &trans        &trans        &trans
-&trans  &trans  &trans  &trans  &trans              &studio_unlock  &trans        &trans        &trans        &bt BT_CLR
-&trans  &trans  &trans  &trans  &trans  &trans      &trans          &trans        &trans        &trans        &bt BT_CLR_ALL
+&trans  &trans  &trans  &trans  &trans              &trans          &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans              &trans          &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans              &studio_unlock  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans          &trans  &trans  &trans  &trans
             >;
 
-            sensor-bindings = <&rsr_vol &rsr_trans>;
+            sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>, <&rsr_trans>;
         };
 
         num_func {
             bindings = <
-&trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans
+&kp F9  &kp F10  &kp F11      &kp F12         &kp RC(F)                                               &kp PLUS   &kp N7  &kp N8  &kp N9       &kp MINUS
+&kp F5  &kp F6   &kp F7       &kp F8          &kp RG(V)                                               &kp DOT    &kp N4  &kp N5  &kp N6       &kp N0
+&kp F1  &kp F2   &kp F3       &kp F4          &kp RS(RG(S))                                           &kp ASTRK  &kp N1  &kp N2  &kp N3       &kp FSLH
+&trans  &trans   &lng2_at_l0  &lng2_under_l0  &mt_L0EN RIGHT_CONTROL 0  &mt_L0EN RIGHT_CONTROL 0      &trans     &trans  &trans  &kp PERCENT  &kp EQUAL
             >;
 
-            sensor-bindings = <&rsr_vol &rsr_trans>;
+            sensor-bindings = <&mouse_scrl SCRL_RIGHT SCRL_LEFT>, <&rsr_trans>;
         };
 
         num_not_ohnishi {
             bindings = <
-&trans  &trans  &trans  &trans  &trans              &trans  &mkp MB1  &mkp MB2  &mkp MB3  &trans
-&trans  &trans  &trans  &trans  &trans              &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans              &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans    &trans    &trans    &trans
+&kp F9  &kp F10  &kp F11   &kp F12      &kp RC(F)                                                       &kp PLUS   &kp N7  &kp N8  &kp N9       &kp MINUS
+&kp F5  &kp F6   &kp F7    &kp F8       &kp RG(V)                                                       &kp DOT    &kp N4  &kp N5  &kp N6       &kp N0
+&kp F1  &kp F2   &kp F3    &kp F4       &kp RS(RG(S))                                                   &kp ASTRK  &kp N1  &kp N2  &kp N3       &kp FSLH
+&trans  &trans   &lng2_at  &lng2_under  &mt RIGHT_CONTROL LANGUAGE_2  &mt RIGHT_CONTROL LANGUAGE_2      &trans     &trans  &trans  &kp PERCENT  &kp EQUAL
             >;
 
-            sensor-bindings = <&rsr_vol &rsr_trans>;
+            sensor-bindings = <&mouse_scrl SCRL_RIGHT SCRL_LEFT>, <&rsr_trans>;
         };
 
         symbol_scroll_vrt {
             bindings = <
-&kp LC(Z)  &kp LC(Y)    &trans       &trans       &trans              &trans  &trans  &trans  &trans  &trans
-&trans     &trans       &trans       &trans       &trans              &trans  &trans  &trans  &trans  &trans
-&trans     &screenshot  &kp LC(INS)  &kp LS(INS)  &trans              &trans  &trans  &trans  &trans  &trans
-&trans     &trans       &trans       &trans       &trans  &trans      &trans  &trans  &trans  &trans  &trans
+&kp ESC  &kp LC(Y)  &trans  &kp LBKT       &kp RBKT                       &kakko        &kp AMPERSAND    &kp DOLLAR    &kp TILDE  &trans
+&kp TAB  &trans     &trans  &kp SEMICOLON  &kp COLON                      &doublequote  &kp AT_SIGN      &kp HASH      &kp CARET  &trans
+&trans   &trans     &trans  &kp SQT        &kp DOUBLE_QUOTES              &kagikakko    &kp EXCLAMATION  &kp QUESTION  &kp TILDE  &trans
+&trans   &trans     &trans  &trans         &trans             &trans      &trans        &trans           &trans        &trans     &trans
             >;
 
-            sensor-bindings = <&rsr_vol &rsr_trans>;
+            sensor-bindings = <&re_kp F17 F18>, <&rsr_trans>;
         };
 
         ctrl_office_scroll_hrz {
             bindings = <
-&trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans
+&kp RA(Q)  &kp RA(W)  &kp RA(E)  &kp RA(R)  &trans                         &trans      &kp HOME  &kp UP    &kp END    &trans
+&kp RA(A)  &kp RA(S)  &kp RA(D)  &kp RA(F)  &trans                         &kp Z       &kp LEFT  &kp DOWN  &kp RIGHT  &trans
+&kp RA(Z)  &kp RA(X)  &kp RA(C)  &kp RA(V)  &trans                         &kp Y       &kp C     &kp X     &kp V      &trans
+&trans     &trans     &trans     &kp ENTER  &kp BACKSPACE  &kp DELETE      &kp DELETE  &kp RGUI  &trans    &trans     &trans
             >;
+
+            sensor-bindings = <&re_kp RC(Z) RC(Y)>;
         };
 
         browse {
             bindings = <
-&trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans            &trans              &kp RC(T)      &kp F15            &kp F16        &trans  &trans
+&trans  &trans  &trans  &trans            &trans              &kp RC(W)      &kp RS(RC(TAB))    &kp RC(TAB)    &kp F5  &trans
+&trans  &trans  &trans  &trans            &trans              &kp RS(RC(T))  &kp RA(LEFT)       &kp RA(RIGHT)  &trans  &trans
+&trans  &trans  &trans  &kp RC(RG(LEFT))  &trans  &trans      &kp RG(TAB)    &kp RC(RG(RIGHT))  &trans         &trans  &trans
             >;
+
+            sensor-bindings = <&re_kp C_VOLUME_DOWN C_VOLUME_UP>;
         };
 
         wireless {
             bindings = <
-&trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                   &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&trans  &trans  &trans  &trans  &trans                   &to 0         &to 2           &trans        &trans        &trans
+&trans  &trans  &trans  &trans  &trans                   &trans        &trans          &trans        &trans        &bt BT_CLR
+&trans  &trans  &trans  &trans  &trans  &bootloader      &bootloader   &studio_unlock  &trans        &trans        &bt BT_CLR_ALL
             >;
         };
     };
