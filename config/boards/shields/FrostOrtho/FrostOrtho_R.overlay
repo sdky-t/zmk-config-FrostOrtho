@@ -71,7 +71,7 @@
 
 &trackball_listener {
     scroller_y {
-        layers = <5>; // 縦スクロールレイヤー
+        layers = <7>; // 縦スクロールレイヤー
         input-processors = <
             // &scroll_runtime_input_processor
             &zip_scroll_transform (INPUT_TRANSFORM_X_INVERT) // スクロール方向調整
@@ -81,7 +81,7 @@
         >;
     };
     scroller_x {
-        layers = <7>; // 横スクロールレイヤー
+        layers = <8>; // 横スクロールレイヤー
         input-processors = <
             &zip_scroll_transform (INPUT_TRANSFORM_X_INVERT) // スクロール方向調整
             &zip_xy_to_scroll_mapper
