@@ -14,8 +14,8 @@
 };
 
 // AML クリックしたときにタイムアウトを延長
-
-&mkp_input_listener { input-processors = <&zip_temp_layer MOUSE 10000>; };
+//解除キー廃止に伴い時間変更10000→400
+&mkp_input_listener { input-processors = <&zip_temp_layer MOUSE 400>; };
 
 / {
     combos {
