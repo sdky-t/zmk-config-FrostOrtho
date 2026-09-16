@@ -294,7 +294,7 @@
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             tap-ms = <20>;
-            bindings = <&msc MOVE_RIGHT>, <&msc MOVE_LEFT>;
+            bindings = <&msc MOVE_LEFT>, <&msc MOVE_RIGHT>;
         };
 
         volume_up_down: volume_up_down {
