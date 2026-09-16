@@ -1,4 +1,5 @@
 //scrlの移動量をlinea40と同じだけ増やす
+
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 150
 
 #include <input/processors.dtsi>
@@ -12,16 +13,12 @@
 #define MOUSE 3
 
 //スクロール、linea40移植
+
 &msc {
     delay-ms = <3>;
     trigger-period-ms = <3>;
     time-to-max-speed-ms = <100>;
     acceleration-exponent = <0>;
-};
-
-&mt {
-    flavor = "balanced";
-    quick-tap-ms = <0>;
 };
 
 // AML クリックしたときにタイムアウトを延長
@@ -357,10 +354,10 @@
 
         default_layer {
             bindings = <
-&kp Q                  &kp W                &lt 7 E                  &lt 5 R                &kp T                                                &kp Y            &kp U        &kp I      &kp O          &mt RIGHT_ALT P
-&kp A                  &kp S                &kp D                    &lt 8 F                &kp G                                                &kp H            &lt 8 J      &kp K      &kp L          &lt 9 MINUS
-&mt RC(Z) Z            &mt RC(C) X          &mt RC(X) C              &mt RC(V) V            &mt RC(Y) B                                          &kp N            &kp M        &kp COMMA  &kp PERIOD     &lt 8 SLASH
-&mt RIGHT_CONTROL ESC  &mt RIGHT_SHIFT TAB  &mt RIGHT_ALT RIGHT_GUI  &mt RIGHT_SHIFT SPACE  &mt RIGHT_SHIFT SPACE  &mt_L1JP RIGHT_CONTROL 0      &lt 7 BACKSPACE  &lt 5 ENTER  &mo 10     &kp RIGHT_GUI  &mt RIGHT_ALT BACKSLASH
+&kp Q                  &kp W                &lt 7 E                  &lt 5 R      &lt 4 T                                              &kp Y            &kp U        &kp I      &kp O          &lt 4 P
+&kp A                  &kp S                &kp D                    &lt 8 F      &kp G                                                &kp H            &lt 8 J      &kp K      &kp L          &lt 9 MINUS
+&mt RC(Z) Z            &mt RC(C) X          &mt RC(X) C              &mt RC(V) V  &mt RC(Y) B                                          &kp N            &kp M        &kp COMMA  &kp PERIOD     &lt 8 SLASH
+&mt RIGHT_CONTROL ESC  &mt RIGHT_SHIFT TAB  &mt RIGHT_ALT RIGHT_GUI  &none        &mt RIGHT_SHIFT SPACE  &mt_L1JP RIGHT_CONTROL 0      &lt 7 BACKSPACE  &lt 5 ENTER  &mo 10     &kp RIGHT_GUI  &mt RIGHT_ALT BACKSLASH
             >;
 
             sensor-bindings = <&scroll_up_down>, <&rsr_trans>;
@@ -368,7 +365,7 @@
 
         OHNISHI {
             bindings = <
-&kp Q        &kp L        &lt 7 U      &lt 5 COMMA  &kp PERIOD                   &kp F   &kp W        &kp R   &kp Y   &mt RIGHT_ALT P
+&kp Q        &kp L        &lt 7 U      &lt 5 COMMA  &lt 4 DOT                    &kp F   &kp W        &kp R   &kp Y   &lt 4 P
 &kp E        &kp I        &kp A        &lt 8 O      &kp MINUS                    &kp K   &lt 8 T      &kp N   &kp S   &lt 9 H
 &mt RC(Z) Z  &mt RC(C) X  &mt RC(X) C  &mt RC(V) V  &mt RC(Y) SLASH              &kp G   &kp D        &kp M   &kp J   &lt 8 B
 &trans       &trans       &trans       &trans       &trans           &trans      &trans  &lt 5 ENTER  &trans  &trans  &trans
@@ -379,10 +376,10 @@
 
         default_not_ohnishi {
             bindings = <
-&kp Q                  &kp W                &lt 7 E                  &lt 6 R                &kp T                                               &kp Y            &kp U        &kp I      &kp O          &mt RIGHT_ALT P
-&kp A                  &kp S                &kp D                    &lt 8 F                &kp G                                               &kp H            &lt 8 J      &kp K      &kp L          &lt 9 MINUS
-&mt RC(Z) Z            &mt RC(C) X          &mt RC(X) C              &mt RC(V) V            &mt RC(Y) B                                         &kp N            &kp M        &kp COMMA  &kp PERIOD     &lt 8 SLASH
-&mt RIGHT_CONTROL ESC  &mt RIGHT_SHIFT TAB  &mt RIGHT_ALT RIGHT_GUI  &mt RIGHT_SHIFT SPACE  &mt RIGHT_SHIFT SPACE  &mt RIGHT_CONTROL LANG1      &lt 7 BACKSPACE  &lt 6 ENTER  &mo 10     &kp RIGHT_GUI  &mt RIGHT_ALT BACKSLASH
+&kp Q                  &kp W                &lt 7 E                  &lt 6 R      &lt 4 T                                             &kp Y            &kp U        &kp I      &kp O          &lt 4 P
+&kp A                  &kp S                &kp D                    &lt 8 F      &kp G                                               &kp H            &lt 8 J      &kp K      &kp L          &lt 9 MINUS
+&mt RC(Z) Z            &mt RC(C) X          &mt RC(X) C              &mt RC(V) V  &mt RC(Y) B                                         &kp N            &kp M        &kp COMMA  &kp PERIOD     &lt 8 SLASH
+&mt RIGHT_CONTROL ESC  &mt RIGHT_SHIFT TAB  &mt RIGHT_ALT RIGHT_GUI  &none        &mt RIGHT_SHIFT SPACE  &mt RIGHT_CONTROL LANG1      &lt 7 BACKSPACE  &lt 6 ENTER  &mo 10     &kp RIGHT_GUI  &mt RIGHT_ALT BACKSLASH
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>, <&rsr_trans>;
