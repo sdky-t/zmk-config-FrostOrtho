@@ -352,7 +352,7 @@
 &mt RIGHT_CONTROL ESC  &mt RIGHT_SHIFT TAB  &mt RIGHT_ALT RIGHT_GUI  &mt RIGHT_SHIFT SPACE  &mt RIGHT_SHIFT SPACE  &mt_L1JP RIGHT_CONTROL 0      &lt 7 BACKSPACE  &lt 5 ENTER  &mo 10     &kp RIGHT_GUI  &mt RIGHT_ALT BACKSLASH
             >;
 
-            sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>, <&rsr_trans>;
+            sensor-bindings = <&scroll_up_down>, <&rsr_trans>;
         };
 
         OHNISHI {
@@ -379,10 +379,10 @@
 
         mouse {
             bindings = <
-&trans  &trans  &trans  &trans           &trans                                  &trans  &trans    &trans           &mo 8              &trans
-&trans  &trans  &trans  &trans           &trans                                  &trans  &mkp MB1  &mkp MB2         &mo 7              &trans
-&trans  &trans  &trans  &trans           &trans                                  &trans  &trans    &kp RIGHT_SHIFT  &kp RIGHT_CONTROL  &trans
-&trans  &trans  &trans  &kp RIGHT_SHIFT  &kp RIGHT_SHIFT  &kp RIGHT_CONTROL      &trans  &trans    &trans           &trans             &trans
+&trans  &trans  &trans  &trans  &trans                                  &trans  &trans    &trans           &mo 8              &trans
+&trans  &trans  &trans  &trans  &trans                                  &trans  &mkp MB1  &mkp MB2         &mo 7              &trans
+&trans  &trans  &trans  &trans  &trans                                  &trans  &trans    &kp RIGHT_SHIFT  &kp RIGHT_CONTROL  &trans
+&trans  &trans  &trans  &trans  &kp RIGHT_SHIFT  &kp RIGHT_CONTROL      &trans  &trans    &trans           &trans             &trans
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>, <&rsr_trans>;
@@ -390,10 +390,10 @@
 
         slow {
             bindings = <
-&trans  &trans  &trans  &trans  &trans              &trans          &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans              &trans          &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans              &studio_unlock  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans          &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans              &trans  &trans        &kp RG(UP)    &trans         &trans
+&trans  &trans  &trans  &trans  &trans              &trans  &kp RG(LEFT)  &kp RG(DOWN)  &kp RG(RIGHT)  &trans
+&trans  &trans  &trans  &trans  &trans              &trans  &trans        &trans        &trans         &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans        &trans        &trans         &trans
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>, <&rsr_trans>;
