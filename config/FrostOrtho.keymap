@@ -1,5 +1,3 @@
-
-
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 150
 
 #include <input/processors.dtsi>
@@ -380,7 +378,7 @@
 &trans             &trans             &trans             &trans             &trans                 &trans      &trans  &trans         &trans  &trans  &trans
             >;
 
-            sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>, <&rsr_trans>;
+            sensor-bindings = <&mouse_scrl_v>, <&rsr_trans>;
         };
 
         default_not_ohnishi {
@@ -391,7 +389,7 @@
 &mt RIGHT_CONTROL ESC  &mt RIGHT_SHIFT TAB  &mt RIGHT_ALT RIGHT_GUI  &none        &mt RIGHT_SHIFT SPACE  &mt RIGHT_CONTROL LANG1      &lt 7 BACKSPACE  &lt 6 ENTER  &mo 10     &kp RIGHT_GUI  &mt RIGHT_ALT BACKSLASH
             >;
 
-            sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>, <&rsr_trans>;
+            sensor-bindings = <&mouse_scrl_v>, <&rsr_trans>;
         };
 
         mouse {
@@ -435,7 +433,7 @@
 &trans  &trans   &trans   &lng2_at  &lng2_under    &mt RIGHT_CONTROL LANGUAGE_2      &trans     &trans  &trans  &kp PERCENT  &kp EQUAL
             >;
 
-            sensor-bindings = <&mouse_scrl SCRL_RIGHT SCRL_LEFT>, <&rsr_trans>;
+            sensor-bindings = <&mouse_scrl_h>, <&rsr_trans>;
         };
 
         symbol_scroll_vrt {
