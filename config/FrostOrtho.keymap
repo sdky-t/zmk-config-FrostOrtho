@@ -291,20 +291,20 @@
         };
 
         // ロータリーエンコーダー：縦スクロール（Smooth Scrolling向け）
+
         mouse_scrl_v: mouse_scroll_vertical {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             tap-ms = <20>;
-
             bindings = <&msc MOVE_DOWN>, <&msc MOVE_UP>;
         };
 
         // ロータリーエンコーダー：横スクロール（Smooth Scrolling向け）
+
         mouse_scrl_h: mouse_scroll_horizontal {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             tap-ms = <20>;
-
             bindings = <&msc MOVE_RIGHT>, <&msc MOVE_LEFT>;
         };
 
@@ -378,7 +378,7 @@
 &mt RIGHT_CONTROL ESC  &mt RIGHT_SHIFT TAB  &mt RIGHT_ALT RIGHT_GUI  &none              &mt_qs_on RIGHT_SHIFT SPACE  &mt_L1JP RIGHT_CONTROL 0      &lt_qs_on 7 BACKSPACE  &lt_qs_on 5 ENTER  &mo 10     &kp RIGHT_GUI  &mt_qs_on RIGHT_ALT BACKSLASH
             >;
 
-            sensor-bindings = <&scroll_up_down>, <&rsr_trans>;
+            sensor-bindings = <&mouse_scrl_v>, <&rsr_trans>;
         };
 
         OHNISHI {
@@ -433,7 +433,7 @@
 &trans  &trans   &trans   &lng2_at_l0  &lng2_under_l0  &mt_L0EN RIGHT_CONTROL 0      &trans     &trans  &trans  &kp PERCENT  &kp EQUAL
             >;
 
-            sensor-bindings = <&mouse_scrl SCRL_RIGHT SCRL_LEFT>, <&rsr_trans>;
+            sensor-bindings = <&mouse_scrl_h>, <&rsr_trans>;
         };
 
         num_not_ohnishi {
