@@ -1,4 +1,4 @@
-//scrlの移動量をlinea40と同じだけ増やす
+
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 150
 
@@ -11,15 +11,6 @@
 #include <dt-bindings/zmk/pointing.h>
 
 #define MOUSE 3
-
-//スクロール、linea40移植
-
-&msc {
-    delay-ms = <3>;
-    trigger-period-ms = <3>;
-    time-to-max-speed-ms = <100>;
-    acceleration-exponent = <0>;
-};
 
 // AML クリックしたときにタイムアウトを延長
 //解除キー廃止に伴い時間変更10000→400
@@ -296,7 +287,7 @@
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             tap-ms = <20>;
-            bindings = <&msc MOVE_DOWN>, <&msc MOVE_UP>;
+            bindings = <&msc MOVE_UP>, <&msc MOVE_DOWN>;
         };
 
         // ロータリーエンコーダー：横スクロール（Smooth Scrolling向け）
@@ -305,7 +296,7 @@
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             tap-ms = <20>;
-            bindings = <&msc MOVE_RIGHT>, <&msc MOVE_LEFT>;
+            bindings = <&msc MOVE_LEFT>, <&msc MOVE_RIGHT>;
         };
 
         volume_up_down: volume_up_down {
