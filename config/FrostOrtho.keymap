@@ -1,3 +1,6 @@
+//scrlの移動量をlinea40と同じだけ増やす
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 150
+
 #include <input/processors.dtsi>
 #include <behaviors/runtime-sensor-rotate.dtsi>
 #include <behaviors/runtime-sensor-rotate.dtsi>
@@ -7,6 +10,14 @@
 #include <dt-bindings/zmk/pointing.h>
 
 #define MOUSE 3
+
+//スクロール、linea40移植
+&msc {
+    delay-ms = <3>;
+    trigger-period-ms = <3>;
+    time-to-max-speed-ms = <100>;
+    acceleration-exponent = <0>;
+};
 
 &mt {
     flavor = "balanced";
