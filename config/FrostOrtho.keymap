@@ -361,10 +361,10 @@
 
         default_layer {
             bindings = <
-&kp Q                  &kp W                &lt_qs_on 7 E            &lt_qs_on 5 R      &lt_qs_on 4 T                                              &kp Y                  &kp U              &kp I      &kp O          &lt_qs_on 4 P
-&kp A                  &kp S                &kp D                    &lt_qs_on 8 F      &kp G                                                      &kp H                  &lt_qs_on 8 J      &kp K      &kp L          &lt_qs_on 9 MINUS
-&mt_qs_on RC(Z) Z      &mt_qs_on RC(C) X    &mt_qs_on RC(X) C        &mt_qs_on RC(V) V  &mt_qs_on RC(Y) B                                          &kp N                  &kp M              &kp COMMA  &kp PERIOD     &lt_qs_on 8 SLASH
-&mt RIGHT_CONTROL ESC  &mt RIGHT_SHIFT TAB  &mt RIGHT_ALT RIGHT_GUI  &none              &mt_qs_on RIGHT_SHIFT SPACE  &mt_L1JP RIGHT_CONTROL 0      &lt_qs_on 7 BACKSPACE  &lt_qs_on 5 ENTER  &mo 10     &kp RIGHT_GUI  &mt_qs_on RIGHT_ALT BACKSLASH
+&kp Q                  &kp W                &lt_qs_on 7 E            &lt_qs_on 5 R      &lt_qs_on 4 T                                              &kp Y              &kp U                  &kp I      &kp O          &lt_qs_on 4 P
+&kp A                  &kp S                &kp D                    &lt_qs_on 8 F      &kp G                                                      &kp H              &lt_qs_on 8 J          &kp K      &kp L          &lt_qs_on 9 MINUS
+&mt_qs_on RC(Z) Z      &mt_qs_on RC(C) X    &mt_qs_on RC(X) C        &mt_qs_on RC(V) V  &mt_qs_on RC(Y) B                                          &kp N              &kp M                  &kp COMMA  &kp PERIOD     &lt_qs_on 8 SLASH
+&mt RIGHT_CONTROL ESC  &mt RIGHT_SHIFT TAB  &mt RIGHT_ALT RIGHT_GUI  &EN_to_L0          &mt_qs_on RIGHT_SHIFT SPACE  &mt_L1JP RIGHT_CONTROL 0      &lt_qs_on 7 ENTER  &lt_qs_on 5 BACKSPACE  &mo 10     &kp RIGHT_GUI  &mt_qs_on RIGHT_ALT BACKSLASH
             >;
 
             sensor-bindings = <&mouse_scrl_v>, <&rsr_trans>;
@@ -383,10 +383,10 @@
 
         default_not_ohnishi {
             bindings = <
-&kp Q                  &kp W                &lt 7 E                  &lt 6 R      &lt 4 T                                             &kp Y            &kp U        &kp I      &kp O          &lt 4 P
-&kp A                  &kp S                &kp D                    &lt 8 F      &kp G                                               &kp H            &lt 8 J      &kp K      &kp L          &lt 9 MINUS
-&mt RC(Z) Z            &mt RC(C) X          &mt RC(X) C              &mt RC(V) V  &mt RC(Y) B                                         &kp N            &kp M        &kp COMMA  &kp PERIOD     &lt 8 SLASH
-&mt RIGHT_CONTROL ESC  &mt RIGHT_SHIFT TAB  &mt RIGHT_ALT RIGHT_GUI  &none        &mt RIGHT_SHIFT SPACE  &mt RIGHT_CONTROL LANG1      &lt 7 BACKSPACE  &lt 6 ENTER  &mo 10     &kp RIGHT_GUI  &mt RIGHT_ALT BACKSLASH
+&kp Q                        &kp W                      &lt_qs_on 7 E                  &lt_qs_on 6 R      &lt_qs_on 4 T                                                   &kp Y              &kp U                  &kp I      &kp O          &lt_qs_on 4 P
+&kp A                        &kp S                      &kp D                          &lt_qs_on 8 F      &kp G                                                           &kp H              &lt_qs_on 8 J          &kp K      &kp L          &lt_qs_on 9 MINUS
+&mt_qs_on RC(Z) Z            &mt_qs_on RC(C) X          &mt_qs_on RC(X) C              &mt_qs_on RC(V) V  &mt_qs_on RC(Y) B                                               &kp N              &kp M                  &kp COMMA  &kp PERIOD     &lt_qs_on 8 SLASH
+&mt_qs_on RIGHT_CONTROL ESC  &mt_qs_on RIGHT_SHIFT TAB  &mt_qs_on RIGHT_ALT RIGHT_GUI  &kp LANGUAGE_2     &mt_qs_on RIGHT_SHIFT SPACE  &mt_qs_on RIGHT_CONTROL LANG1      &lt_qs_on 7 ENTER  &lt_qs_on 6 BACKSPACE  &mo 10     &kp RIGHT_GUI  &mt_qs_on RIGHT_ALT BACKSLASH
             >;
 
             sensor-bindings = <&mouse_scrl_v>, <&rsr_trans>;
@@ -449,10 +449,10 @@
 
         ctrl_office_scroll_hrz {
             bindings = <
-&kp RA(Q)  &kp RA(W)  &kp RA(E)  &kp RA(R)  &trans                         &trans      &kp HOME   &kp UP     &kp END    &trans
-&kp RA(A)  &kp RA(S)  &kp RA(D)  &kp RA(F)  &trans                         &kp RC(Z)   &kp LEFT   &kp DOWN   &kp RIGHT  &trans
-&kp RA(Z)  &kp RA(X)  &kp RA(C)  &kp RA(V)  &trans                         &kp RC(Y)   &kp RC(C)  &kp RC(X)  &kp RC(V)  &trans
-&trans     &trans     &trans     &kp ENTER  &kp BACKSPACE  &kp DELETE      &kp DELETE  &kp RGUI   &trans     &trans     &trans
+&kp RA(Q)  &kp RA(W)  &kp RA(E)  &kp RA(R)  &trans                         &trans         &kp HOME    &kp UP     &kp END    &trans
+&kp RA(A)  &kp RA(S)  &kp RA(D)  &kp RA(F)  &trans                         &kp RC(Z)      &kp LEFT    &kp DOWN   &kp RIGHT  &trans
+&kp RA(Z)  &kp RA(X)  &kp RA(C)  &kp RA(V)  &trans                         &kp RC(Y)      &kp RC(C)   &kp RC(X)  &kp RC(V)  &trans
+&trans     &trans     &trans     &kp ENTER  &kp BACKSPACE  &kp DELETE      &kp RIGHT_GUI  &kp DELETE  &trans     &trans     &trans
             >;
 
             sensor-bindings = <&re_kp RC(Z) RC(Y)>;
