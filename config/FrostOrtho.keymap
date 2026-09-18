@@ -405,10 +405,10 @@
 
         slow {
             bindings = <
-&trans  &trans  &trans  &trans  &trans              &trans  &trans        &kp RG(UP)    &trans         &trans
-&trans  &trans  &trans  &trans  &trans              &trans  &kp RG(LEFT)  &kp RG(DOWN)  &kp RG(RIGHT)  &trans
-&trans  &trans  &trans  &trans  &trans              &trans  &trans        &trans        &trans         &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans        &trans        &trans         &trans
+&trans  &trans        &kp RG(UP)    &trans         &trans              &trans  &trans        &kp RG(UP)    &trans         &trans
+&trans  &kp RG(LEFT)  &kp RG(DOWN)  &kp RG(RIGHT)  &trans              &trans  &kp RG(LEFT)  &kp RG(DOWN)  &kp RG(RIGHT)  &trans
+&trans  &trans        &trans        &trans         &trans              &trans  &trans        &trans        &trans         &trans
+&trans  &trans        &trans        &trans         &trans  &trans      &trans  &trans        &trans        &trans         &trans
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>, <&rsr_trans>;
