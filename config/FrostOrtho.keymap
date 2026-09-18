@@ -215,14 +215,14 @@
         lng2_under: lng2_under {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LANGUAGE_2 &kp RS(MINUS) &to 0>;
+            bindings = <&kp LANGUAGE_2 &kp RS(MINUS)>;
             label = "LNG2_UNDER";
         };
 
         lng2_at: lng2_at {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LANGUAGE_2 &kp RS(NUMBER_2) &to 0>;
+            bindings = <&kp LANGUAGE_2 &kp RS(NUMBER_2)>;
             label = "LNG2_AT";
         };
     };
